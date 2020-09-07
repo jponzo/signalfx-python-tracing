@@ -9,15 +9,15 @@ import re
 
 protocols = ('http://', 'https://', 'ssh://', 'svn://')
 
-pep508 = False
-try:
-    import pip
-    # PEP 508 url support was added in pip 18 and dependency link support was
-    # dropped in 19: https://github.com/pypa/pip/issues/4187
-    if pip.__version__ >= '18.0.0':
-        pep508 = True
-except ImportError:
-    pass
+pep508 = True
+# try:
+#     import pip
+#     # PEP 508 url support was added in pip 18 and dependency link support was
+#     # dropped in 19: https://github.com/pypa/pip/issues/4187
+#     if pip.__version__ >= '18.0.0':
+#         pep508 = True
+# except ImportError:
+#     pass
 
 
 class PyTest(TestCommand):
